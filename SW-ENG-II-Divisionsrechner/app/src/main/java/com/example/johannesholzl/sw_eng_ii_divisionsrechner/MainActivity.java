@@ -25,16 +25,19 @@ public class MainActivity extends AppCompatActivity {
     public void onClickButton(View view){
         String toOutput = "";
 
-        double d0 = Double.parseDouble(dividend.getText().toString());
 
-        double d1 = Double.parseDouble(divisor.getText().toString());
+        try {
+            double d0 = Double.parseDouble(dividend.getText().toString());
 
-        if(d1 != 0){
-            toOutput += d0/d1;
-        }else{
-            toOutput = "Division durch 0!";
+            double d1 = Double.parseDouble(divisor.getText().toString());
+            if(d1 != 0){
+                toOutput += d0/d1;
+            }else{
+                toOutput = "Division durch 0!";
+            }
+        }catch(Exception e){
+            toOutput = "Ungültige Eingabe!";
         }
-
 
         output.setText(toOutput);
     }
