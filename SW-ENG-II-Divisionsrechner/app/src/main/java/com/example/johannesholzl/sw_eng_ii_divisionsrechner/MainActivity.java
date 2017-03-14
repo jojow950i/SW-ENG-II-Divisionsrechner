@@ -23,8 +23,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickButton(View view){
+        String toOutput = "";
+
         double d0 = Double.parseDouble(dividend.getText().toString());
+
         double d1 = Double.parseDouble(divisor.getText().toString());
-        output.setText(""+d0/d1);
+
+        if(d1 != 0){
+            toOutput += d0/d1;
+        }else{
+            toOutput = "Division durch 0!";
+        }
+
+
+        output.setText(toOutput);
     }
 }
